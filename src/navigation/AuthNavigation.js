@@ -59,6 +59,7 @@ const AuthNavigation = (props) => {
         component={Otpscreen}
         options={{ title: "Otpscreen" }}
       />
+      
     </Stack.Navigator>
   );
 };

@@ -13,16 +13,16 @@ const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View>
-      <Image style={styles.logo_image} source={require('../../assets/logo.png')} />
+        <Image style={styles.logo_image} source={require('../../assets/logo.png')} />
       </View>
-      <TouchableOpacity 
+      <TouchableOpacity
       // onPress={() => navigation.navigate('SettingTab', {
       //   screen: 'innerProfileSetting',
       // })}
       >
         <View style={styles.logoutIcon}>
-                            <AntDesign name="logout" color={colors.black} size={20} />
-                        </View>
+          <AntDesign name="logout" color={colors.black} size={20} />
+        </View>
       </TouchableOpacity>
     </View>
   )
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 30,
     paddingVertical: 10,
+    backgroundColor:"white"
   },
   Header_text: {
     color: colors.SecondaryColor,
@@ -66,11 +67,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: "gray",
-},
-logo_image: {
-  height: windowHeight - 800,
-  width: windowWidth- 300
-},
+  },
+  logo_image: {
+    height: windowHeight - 700,
+    width: windowWidth - 280
+  },
 
 
 })

@@ -6,6 +6,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import colors from '../assets/colors/colors';
+import Reels from '../screens/Reels';
+import Profile from '../screens/Profile';
 
 
 function HomeTab() {
@@ -20,6 +22,8 @@ function HomeTab() {
       }}
       initialRouteName="homeTab">
       <HomeTabStack.Screen name="homeTab" component={Home} options={{ headerShown: false }} />
+      <HomeTabStack.Screen name="reelTab" component={Reels} options={{ headerShown: false }} />
+      <HomeTabStack.Screen name="profileTab" component={Profile} options={{ headerShown: false }} />
 
     </HomeTabStack.Navigator>
   );
@@ -34,7 +38,7 @@ const BtabNavigation = (props) => {
       initialRouteName={props.initRoute}
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: colors.SecondaryColor,
+          backgroundColor: colors.black,
           borderRadius: 30,
           position: 'absolute',
           paddingHorizontal: 40,
@@ -42,7 +46,7 @@ const BtabNavigation = (props) => {
           left: 20,
           right: 20,
           height: 80,
-          shadowColor: colors.black,
+          shadowColor: colors.white,
           shadowOffset: {
             width: 0,
             height: 3,
@@ -61,7 +65,7 @@ const BtabNavigation = (props) => {
         style={{ paddingHorizontal: 0 }}
         options={{
           headerShown: false,
-          tabBarIcon: ({ color = 'red', size, focused }) => (
+          tabBarIcon: ({ color = 'white', size, focused }) => (
             <View style={focused ? { marginBottom: 10, alignItems: "center", width: 200 } : { alignItems: "center", width: 100 }}>
               <FontAwesome5 name="home" color={color} size={size} />
             </View>
@@ -70,7 +74,36 @@ const BtabNavigation = (props) => {
         }}
       />
 
-     
+      <Tab.Screen
+        name="Reels"
+        component={Reels}
+        style={{ paddingHorizontal: 0 }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color = 'white', size, focused }) => (
+            <View style={focused ? { marginBottom: 10, alignItems: "center", width: 200 } : { alignItems: "center", width: 100 }}>
+              <Entypo name="video" color={color} size={size} />
+            </View>
+          ),
+          tabBarLabel: ({ focused }) => null,
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        style={{ paddingHorizontal: 0 }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color = 'white', size, focused }) => (
+            <View style={focused ? { marginBottom: 10, alignItems: "center", width: 200 } : { alignItems: "center", width: 100 }}>
+              <Entypo name="user" color={color} size={size} />
+            </View>
+          ),
+          tabBarLabel: ({ focused }) => null,
+        }}
+      />
+
     </Tab.Navigator >
   );
 };

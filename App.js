@@ -27,15 +27,15 @@ import RootNavigation from './src/navigation/RootNavigation';
 
 
 
-function App()  {
+function App() {
 
 
   return (
     <NavigationContainer >
 
-        <RootNavigation initRoute={"Home"} />
+      <RootNavigation initRoute={"Home"} />
 
-      </NavigationContainer>
+    </NavigationContainer>
   );
 }
 

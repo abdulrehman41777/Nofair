@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthNavigation from './AuthNavigation';
 import BtabNavigation from "./Btabnavigation";
+import Header from '../components/Home/Header';
 
 const RootNavigation = (props) => {
   const Stack = createNativeStackNavigator();
@@ -23,12 +24,15 @@ const RootNavigation = (props) => {
   };
 
 
-  const isLoggin = false
+  const isLoggin = true
 
   return (
 
     isLoggin ?
-      <BtabNavigation initRoute={"Home"} />
+      <>
+        <Header />
+        <BtabNavigation initRoute={"Home"} />
+      </>
       :
       <AuthNavigation initRoute={"Login"} />
 
